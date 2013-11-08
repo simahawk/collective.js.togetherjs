@@ -1,0 +1,10 @@
+<div class="togetherjs">
+
+    <button id="start-togetherjs">Start TogetherJS</button>
+    <script>
+        $(function () {
+          $("#start-togetherjs").click(TogetherJS);
+        });
+    </script>
+
+</div>
