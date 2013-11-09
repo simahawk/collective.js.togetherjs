@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>0001</version>
+  <version>1000</version>
   <dependencies>
     <dependency>profile-collective.js.togetherjs:default</dependency>
   </dependencies>

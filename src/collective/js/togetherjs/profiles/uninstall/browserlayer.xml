@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+    <layer name="collective.js.togetherjs"
+           interface="collective.js.togetherjs.interfaces.ILayer"
+           remove="True"
+           />
+</layers>

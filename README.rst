@@ -11,16 +11,20 @@ This provides registration for JS resource accessible via
 
     www.yourdomain.com/++resource++together.js.
 
-and a base viewlet class to be used to include the activation button, like this::
+and a viewlet that inject the button for enabling TogetherJS.
 
-    <browser:viewlet
-        name="togetherjs"
-        for="*"
-        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
-        layer="your.project.interfaces.IBrowserLayer"
-        class="collective.js.togetherjs.viewlets.TogetherJS"
-        permission="zope2.View"
-        />
+Rendering of JS and viewlet are subject to registry settings via:
+
+    collective.js.togetherjs.interfaces.ISettings.enabled
+
+An helper view `@@togetherjs` is registered to get settings, like::
+
+    <tal:block define="helpers context/@@togetherjs"
+           condition="helpers/enabled">
+           [...]
+    </tal:block>
+
+You can override this view for your own needs.
 
 
 .. _TogetherJS: https://togetherjs.com/

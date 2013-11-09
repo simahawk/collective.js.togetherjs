@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<registry>
+ <!-- These have to be added one by one as the "records" doesn't support delete -->
+ <record
+    delete="true"
+    field="enabled"
+    interface="collective.js.togetherjs.interfaces.ISettings"
+    name="collective.js.togetherjs.interfaces.ISettings.enabled"
+    />
+
+</registry>

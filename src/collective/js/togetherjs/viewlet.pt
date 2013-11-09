@@ -1,10 +1,13 @@
-<div class="togetherjs">
+<tal:block define="helpers context/@@togetherjs"
+           condition="helpers/enabled">
+    <div class="togetherjs" style="float:right">
 
-    <button id="start-togetherjs">Start TogetherJS</button>
-    <script>
-        $(function () {
-          $("#start-togetherjs").click(TogetherJS);
-        });
-    </script>
+        <button id="start-togetherjs">Start TogetherJS</button>
+        <script>
+            $(function () {
+              $("#start-togetherjs").click(TogetherJS);
+            });
+        </script>
 
-</div>
+    </div>
+</tal:block>

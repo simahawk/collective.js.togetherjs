@@ -5,7 +5,7 @@
       compression="safe"
       cookable="True"
       enabled="True"
-      expression=""
+      expression="context/@@togetherjs/enabled"
       id="++resource++togetherjs.js"
       inline="False"
       />

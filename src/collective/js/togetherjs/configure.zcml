@@ -2,18 +2,44 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="collective.js.togetherjs">
 
   <five:registerPackage package="." initialize=".initialize" />
 
-  <genericsetup:registerProfile
-      name="default"
-      title="TogetherJS"
-      directory="profiles/default"
-      description="Installs the collective.js.togetherjs package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-  <!-- -*- extra stuff goes here -*- -->
+  <gs:registerProfile
+    name="default"
+    title="TogetherJS"
+    directory="profiles/default"
+    description="Installs the collective.js.togetherjs package"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <gs:registerProfile
+    name="uninstall"
+    title="TogetherJS (uninstall)"
+    directory="profiles/uninstall"
+    description="Uninstall collective.js.togetherjs"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <browser:page
+    for="*"
+    name="togetherjs"
+    permission="zope2.View"
+    class=".browser.Helpers"
+    layer=".interfaces.ILayer"
+    allowed_attributes="settings enabled"
+    />
+
+  <browser:viewlet
+    name="togetherjs"
+    for="*"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+    layer=".interfaces.ILayer"
+    class="collective.js.togetherjs.viewlets.TogetherJS"
+    permission="zope2.View"
+    />
 
 </configure>
