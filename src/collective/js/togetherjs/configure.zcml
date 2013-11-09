@@ -17,11 +17,16 @@
     />
 
   <gs:registerProfile
-    name="uninstall"
-    title="TogetherJS (uninstall)"
-    directory="profiles/uninstall"
-    description="Uninstall collective.js.togetherjs"
-    provides="Products.GenericSetup.interfaces.EXTENSION"
+      name="uninstall"
+      title="TogetherJS (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstall collective.js.togetherjs"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <browser:resource
+    name="togetherjs.js"
+    file="togetherjs-min.js"
     />
 
   <browser:page
